@@ -5,6 +5,7 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 import com.ordnaelmedeiros.jpafluidselect.querybuilder.QueryBuilder;
 
@@ -20,9 +21,14 @@ public class PessoaService {
 			.getResultList();
 	}
 	
+	@Transactional
 	public Long gravar(Pessoa pessoa) {
 		em.persist(pessoa);
 		return pessoa.getId();
+	}
+
+	public Pessoa busca(Long id) {
+		return em.find(Pessoa.class, id);
 	}
 	
 }

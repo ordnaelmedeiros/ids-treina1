@@ -7,6 +7,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -24,6 +25,12 @@ public class PessoaResource {
 	@POST
 	public Long post(Pessoa pessoa) {
 		return pessoaService.gravar(pessoa);
+	}
+	
+	@GET
+	@Path("/{id}")
+	public Pessoa get(@PathParam("id") Long id) {
+		return pessoaService.busca(id);
 	}
 	
 	@GET
