@@ -1,0 +1,5 @@
+FROM alpine:3.10
+RUN apk add --update nodejs nodejs-npm
+RUN npm install -g @angular/cli
+WORKDIR /dados
+CMD npm install && ng serve --host 0.0.0.0
