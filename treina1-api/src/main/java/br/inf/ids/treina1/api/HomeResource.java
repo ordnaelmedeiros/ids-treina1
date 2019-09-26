@@ -37,4 +37,11 @@ public class HomeResource {
         
     }
     
+    @GET
+    @Path("/test")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ObjetoTest objTest() {
+    	return new ObjetoTest();
+    }
+    
 }
