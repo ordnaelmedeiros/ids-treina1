@@ -1,5 +1,6 @@
 package br.inf.ids.treina1.core;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.validation.ConstraintViolation;
@@ -12,20 +13,20 @@ import javax.ws.rs.ext.Provider;
 @Provider
 public class ConstraintViolationMapper implements ExceptionMapper<ConstraintViolationException> {
 
-	private String format(ConstraintViolation<?> cv) { 
+	private String format(ConstraintViolation<?> cv) {
 		return cv.getPropertyPath().toString() + ": " + cv.getMessage();
 	}
 	
 	@Override
 	public Response toResponse(ConstraintViolationException exception) {
 		
-		String msg = exception.getConstraintViolations().stream()
+		List<String> msgs = exception.getConstraintViolations().stream()
         	.map(this::format)
-        	.collect(Collectors.joining(".\n"));
+        	.collect(Collectors.toList());
         	
 		return Response
 				.status(Status.BAD_REQUEST)
-				.entity(msg)
+				.entity(new ConstraintViolationObj(msgs))
 				.build();
 		
 	}
