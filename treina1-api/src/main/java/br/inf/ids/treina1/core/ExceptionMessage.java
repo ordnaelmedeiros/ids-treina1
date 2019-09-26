@@ -2,11 +2,11 @@ package br.inf.ids.treina1.core;
 
 import java.util.List;
 
-public class ConstraintViolationObj {
+public class ExceptionMessage {
 
 	private List<String> mensagens;
 	
-	public ConstraintViolationObj(List<String> mensagens) {
+	public ExceptionMessage(List<String> mensagens) {
 		this.mensagens = mensagens;
 	}
 

@@ -26,7 +26,7 @@ public class ConstraintViolationMapper implements ExceptionMapper<ConstraintViol
         	
 		return Response
 				.status(Status.BAD_REQUEST)
-				.entity(new ConstraintViolationObj(msgs))
+				.entity(new ExceptionMessage(msgs))
 				.build();
 		
 	}
