@@ -13,6 +13,8 @@ import javax.validation.Validator;
 
 import com.ordnaelmedeiros.jpafluidselect.querybuilder.QueryBuilder;
 
+import br.inf.ids.treina1.api.pessoa.validacao.PessoaValidaCPFDuplicado;
+
 @RequestScoped
 public class PessoaService {
 	
@@ -22,11 +24,15 @@ public class PessoaService {
 	@Inject
 	Validator validator;
 	
+	@Inject
+	PessoaValidaCPFDuplicado cpfDuplicado;
+	
 	private void validar(Pessoa pessoa) {
 		Set<ConstraintViolation<Pessoa>> validate = validator.validate(pessoa);
 		if (!validate.isEmpty()) {
 			throw new ConstraintViolationException(validate);
 		}
+		cpfDuplicado.executa(pessoa);
 	}
 	
 	public List<Pessoa> todas() {
@@ -44,6 +50,17 @@ public class PessoaService {
 
 	public Pessoa busca(Long id) {
 		return em.find(Pessoa.class, id);
+	}
+
+	@Transactional
+	public void atualizar(Pessoa pessoa) {
+		this.validar(pessoa);
+		em.merge(pessoa);
+	}
+	
+	@Transactional
+	public void remover(Long id) {
+		em.remove(busca(id));
 	}
 	
 }
