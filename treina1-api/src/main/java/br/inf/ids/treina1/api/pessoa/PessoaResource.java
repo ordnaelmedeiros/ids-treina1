@@ -11,9 +11,14 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
+
+import com.ordnaelmedeiros.jpafluidselect.querybuilder.select.pagination.PaginationResult;
 
 @Tag(name = "Pessoa")
 @Path("/pessoa")
@@ -50,6 +55,14 @@ public class PessoaResource {
 	@Path("/{id}")
 	public void delete(@PathParam("id") Long id) {
 		pessoaService.remover(id);
+	}
+	
+	@GET
+	@Path("/pesquisa")
+	public PaginationResult<Pessoa> pesquisa(
+			@QueryParam("pagina") Integer pagina,
+			@Parameter(required = false, name = "valor") @QueryParam("valor") String valor) {
+		return pessoaService.pesquisa(pagina, valor);
 	}
 	
 }

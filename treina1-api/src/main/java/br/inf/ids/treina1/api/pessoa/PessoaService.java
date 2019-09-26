@@ -12,6 +12,7 @@ import javax.validation.ConstraintViolationException;
 import javax.validation.Validator;
 
 import com.ordnaelmedeiros.jpafluidselect.querybuilder.QueryBuilder;
+import com.ordnaelmedeiros.jpafluidselect.querybuilder.select.pagination.PaginationResult;
 
 import br.inf.ids.treina1.api.pessoa.validacao.PessoaValidaCPFDuplicado;
 
@@ -61,6 +62,28 @@ public class PessoaService {
 	@Transactional
 	public void remover(Long id) {
 		em.remove(busca(id));
+	}
+
+	public PaginationResult<Pessoa> pesquisa(Integer pagina, String valor) {
+		
+		return new QueryBuilder(em)
+			.select(Pessoa.class)
+			.where().orGroup(w -> {
+				
+				if (valor!=null) {
+					try {
+						Long pesquisaId = Long.valueOf(valor);
+						w.field(Pessoa_.id).eq(pesquisaId);
+					} catch (Exception e) {}
+					w.field(Pessoa_.nome).ilike("%"+valor+"%");
+					w.field(Pessoa_.CPF).ilike("%"+valor+"%");
+				}
+			})
+			.pagination()
+				.numRows(10)
+				.page(pagina)
+			.getResultList();
+		
 	}
 	
 }
