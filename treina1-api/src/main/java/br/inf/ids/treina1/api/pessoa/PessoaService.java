@@ -29,7 +29,7 @@ public class PessoaService {
 	PessoaValidaCPFDuplicado cpfDuplicado;
 	
 	private void validar(Pessoa pessoa) {
-		Set<ConstraintViolation<Pessoa>> validate = validator.validate(pessoa);
+		Set<ConstraintViolation<Object>> validate = validator.validate(pessoa);
 		if (!validate.isEmpty()) {
 			throw new ConstraintViolationException(validate);
 		}
