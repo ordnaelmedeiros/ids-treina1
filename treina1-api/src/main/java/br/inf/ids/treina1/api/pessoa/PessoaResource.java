@@ -27,7 +27,7 @@ public class PessoaResource {
 	
 	@Inject
 	PessoaService pessoaService;
-
+	
 	@POST
 	public Long post(Pessoa pessoa) {
 		return pessoaService.gravar(pessoa);
@@ -40,7 +40,7 @@ public class PessoaResource {
 	}
 	
 	@GET
-	@Path("/todas")
+	@Path("/tudo")
 	public List<Pessoa> getTodas() {
 		return pessoaService.todas();
 	}
