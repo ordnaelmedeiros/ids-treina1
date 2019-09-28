@@ -74,13 +74,16 @@ Hello World
 # Eclipse
 - Link para download:
 - https://www.eclipse.org/downloads/
+- Ao instalar escolher a opção:
+    - Eclipse IDS for Enterprise Java Developers
+- Escolha do Java 1.8+ VM
+    - Normalmente já vem selecionado o JRE do Java:
+    - Ex.: {...}/ojdkbuild/java-1.8.0-openjdk-1.8.0.222-2/jre
+    - Necessário remover o `/jre` do final do caminho
 
-https://www.eclipse.org/downloads/
 
+# Final
 Se tudo correu bem, te espero no treinamento.<br/>
 Se não, pode me chamar que eu ajudo:
 - leandro@ids.inf.br
 - ordnaelmedeiros@gmail.com
-
-
-
