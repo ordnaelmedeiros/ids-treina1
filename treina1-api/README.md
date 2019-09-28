@@ -75,7 +75,7 @@ Hello World
 - Link para download:
 - https://www.eclipse.org/downloads/
 - Ao instalar escolher a opção:
-    - Eclipse IDS for Enterprise Java Developers
+    - Eclipse IDE for Enterprise Java Developers
 - Escolha do Java 1.8+ VM
     - Normalmente já vem selecionado o JRE do Java:
     - Ex.: {...}/ojdkbuild/java-1.8.0-openjdk-1.8.0.222-2/jre
