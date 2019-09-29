@@ -1,4 +1,4 @@
-package br.inf.ids.treina1.core;
+package br.inf.ids.treina1.core.exception;
 
 import java.util.List;
 import java.util.stream.Collectors;

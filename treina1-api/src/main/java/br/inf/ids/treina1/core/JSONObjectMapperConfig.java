@@ -10,14 +10,13 @@ import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 @ApplicationScoped
-public class CustomObjectMapperConfig {
+public class JSONObjectMapperConfig {
 
 	@Singleton
 	@Produces
 	public ObjectMapper objectMapper() {
 		
 		ObjectMapper objectMapper = new ObjectMapper();
-		// perform configuration
 		
 		objectMapper.registerModule(new JavaTimeModule());
 		objectMapper.registerModule(new Hibernate5Module());
@@ -26,4 +25,5 @@ public class CustomObjectMapperConfig {
 		return objectMapper;
 		
 	}
+	
 }
