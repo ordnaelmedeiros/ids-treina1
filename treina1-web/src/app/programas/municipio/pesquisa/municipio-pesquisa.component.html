@@ -1,0 +1,27 @@
+<h3>Município / Pesquisa</h3>
+<div class='controles'>
+    <button pButton type="button" label="Incluir" routerLink='/municipio/novo' class="ui-button-success"></button>
+</div>
+<p-table [value]="municipios" autoLayout="true" [paginator]="true" [rows]="50">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>UF</th>
+            <th style='width: 60px'>Ações</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-municipio>
+        <tr>
+            <td>{{municipio.id}}</td>
+            <td>{{municipio.nome}}</td>
+            <td>{{municipio.uf}}</td>
+            <td>
+                <a routerLink='/municipio/{{ municipio.id }}'>
+                    <span class='pi pi-eye' style='font-size: x-large'></span>
+                </a>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
