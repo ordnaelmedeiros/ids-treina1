@@ -16,3 +16,8 @@
 .spacer {
     flex: 1;
 }
+
+.toolbar a {
+    color: white;
+    text-decoration: none;
+}

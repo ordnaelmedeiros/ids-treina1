@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopMenuComponent } from './top-menu.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -8,7 +9,8 @@ import { TopMenuComponent } from './top-menu.component';
   declarations: [TopMenuComponent],
   exports: [TopMenuComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class TopMenuModule { }
