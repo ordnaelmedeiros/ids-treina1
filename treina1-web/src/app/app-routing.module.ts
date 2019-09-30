@@ -14,8 +14,9 @@ const routes: Routes = [
     path: 'inicio',
     loadChildren: () => import('./pagina-inicial/pagina-inicial.module').then(mod => mod.PaginaInicialModule),
   },
+  { path: '',   redirectTo: '/inicio', pathMatch: 'full' },
   {
-    path: '*',
+    path: '**',
     redirectTo: 'inicio'
   }
 ];
