@@ -14,7 +14,7 @@ public class RuntimeExceptionMapper implements ExceptionMapper<RuntimeException>
 	@Override
 	public Response toResponse(RuntimeException exception) {
 		
-		if (e instanceof DefaultOptionsMethodException) {
+		if (exception instanceof DefaultOptionsMethodException) {
 			
 			return Response.ok("GET, POST, DELETE, PUT, OPTIONS, HEAD").build();
 			
