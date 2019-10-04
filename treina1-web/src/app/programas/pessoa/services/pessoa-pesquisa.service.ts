@@ -3,26 +3,23 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Municipio } from '../modelos/municipio';
+import { Pessoa } from '../modelos/pessoa';
 
 @Injectable()
-export class MunicipioPesquisaService {
+export class PessoaPesquisaService {
 
   constructor(private http: HttpClient) { }
 
-  listarUFs(): Observable<Municipio[]> {
-    const url = `${environment.apiURL}/municipio/uf/tudo`;
-    return this.http.get<Municipio[]>(url).pipe(
-      tap(
-        ufs => {
-          return of(ufs);
-        }
-      )
-    );
+  listarSexos(): {label: string, value: string}[] {
+    return [
+      { label: 'Não informado', value: 'NAO_INFORMADO' },
+      { label: 'Masculino', value: 'MASCULINO' },
+      { label: 'Feminino', value: 'FEMININO' }
+    ];
   }
 
   pesquisar(valor: any, pagina = 1): Observable<any> {
-    const url = `${environment.apiURL}/municipio/pesquisa`;
+    const url = `${environment.apiURL}/pessoa/pesquisa`;
     const options = {
       params: new HttpParams().set('valor', valor).set('pagina', String(pagina))
     };

@@ -12,4 +12,8 @@ export class SideMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  ajuda() {
+    alert('Te vira magrão!');
+  }
+
 }

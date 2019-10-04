@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { Municipio } from '../modelos/municioio';
+import { Municipio } from '../modelos/municipio';
 import { environment } from 'src/environments/environment';
 
 @Injectable()

@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { MunicipioCrudService } from '../services/municipio-crud.service';
 import { MunicipioPesquisaService } from '../services/municipio-pesquisa.service';
-import { Municipio } from '../modelos/municioio';
+import { Municipio } from '../modelos/municipio';
 
 @Component({
   selector: 'app-municipio-form',
@@ -135,7 +135,7 @@ export class MunicipioFormComponent implements OnInit {
     const confirmacao = confirm('Deseja excluir o Município ' + id + '?');
     if (confirmacao) {
       this.municipioCrudService.deletar(id).subscribe(
-        result => {
+        resultado => {
           this.messageService.add({
             severity: 'success',
             summary: 'Sucesso!',
