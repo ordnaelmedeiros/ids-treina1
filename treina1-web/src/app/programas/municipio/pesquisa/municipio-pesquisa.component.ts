@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MunicipioPesquisaService } from '../services/municipio-pesquisa.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-municipio-pesquisa',
@@ -13,18 +14,30 @@ export class MunicipioPesquisaComponent implements OnInit {
 
   municipios: any;
 
-  constructor(private municipioPesquisaService: MunicipioPesquisaService) { }
+  formPesquisa: FormGroup;
+
+  constructor(private municipioPesquisaService: MunicipioPesquisaService, private formBuilder: FormBuilder) {
+    this.formPesquisa = this.formBuilder.group({
+      valorPesquisa: ['']
+    });
+  }
 
   ngOnInit() {
     this.pesquisar();
   }
 
   pesquisar() {
-    this.municipioPesquisaService.pesquisar('').subscribe(
+    const valorPesquisa = this.formPesquisa.get('valorPesquisa').value;
+    this.municipioPesquisaService.pesquisar(valorPesquisa).subscribe(
       resultado => {
         this.municipios = resultado.data;
       }
     );
+  }
+
+  limparPesquisa() {
+    this.formPesquisa.get('valorPesquisa').setValue('');
+    this.pesquisar();
   }
 
 }

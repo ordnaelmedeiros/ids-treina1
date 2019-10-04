@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MessageService } from 'primeng/components/common/messageservice';
 import { MunicipioCrudService } from '../services/municipio-crud.service';
 import { MunicipioPesquisaService } from '../services/municipio-pesquisa.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-municipio-form',
@@ -10,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./municipio-form.component.css'],
   providers: [
     MunicipioCrudService,
-    MunicipioPesquisaService
+    MunicipioPesquisaService,
+    MessageService
   ]
 })
 export class MunicipioFormComponent implements OnInit {
@@ -20,7 +22,9 @@ export class MunicipioFormComponent implements OnInit {
   editando = false;
 
   constructor(private formBuilder: FormBuilder,
+              private router: Router,
               private route: ActivatedRoute,
+              private messageService: MessageService,
               private municipioPesquisaService: MunicipioPesquisaService,
               private municipioCrudService: MunicipioCrudService) {
     this.configurarFormulario();
@@ -78,15 +82,23 @@ export class MunicipioFormComponent implements OnInit {
         uf: this.formMunicipio.get('uf').value.key
       };
       if (municipio.id) {
-        this.municipioCrudService.incluir(municipio).subscribe(
-          result => {
-            console.log(result);
+        this.municipioCrudService.atualizar(municipio).subscribe(
+          municipioId => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Sucesso!',
+              detail: 'Município ' + municipioId + ' alterado com sucesso!'
+            });
           }
         );
       } else {
-        this.municipioCrudService.atualizar(municipio).subscribe(
-          result => {
-            console.log(result);
+        this.municipioCrudService.incluir(municipio).subscribe(
+          municipioId => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Sucesso!',
+              detail: 'Município ' + municipioId + ' incluído com sucesso!'
+            });
           }
         );
       }
@@ -94,11 +106,16 @@ export class MunicipioFormComponent implements OnInit {
   }
 
   validarFormulario() {
+    this.formMunicipio.markAsDirty();
     this.formMunicipio.updateValueAndValidity();
     if (this.formMunicipio.valid) {
       return true;
     } else {
-      alert('Não é possível salvar o Município!');
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Não é possível salvar o Município!',
+        detail: 'Verifique o preenchimento dos campos e tente novamente.'
+      });
       return false;
     }
   }
@@ -109,19 +126,34 @@ export class MunicipioFormComponent implements OnInit {
     if (confirmacao) {
       this.municipioCrudService.deletar(id).subscribe(
         result => {
-          console.log(result);
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Sucesso!',
+            detail: 'Município ' + id + ' excluído com sucesso!'
+          });
+          this.novo();
         }
       );
     }
   }
 
   novo() {
+    this.router.navigate(['/municipio/novo']);
     this.editando = false;
     this.formMunicipio.reset({
       uf: {
         key: 'PR'
       }
     });
+  }
+
+  cancelar() {
+    const id = this.formMunicipio.get('id').value;
+    if (id) {
+      this.carregarMunicipio(id);
+    } else {
+      this.novo();
+    }
   }
 
 }

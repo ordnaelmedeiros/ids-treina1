@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -25,7 +25,11 @@ export class MunicipioPesquisaService {
     const args = {
       valor
     };
-    return this.http.get<any>(url).pipe(
+    const options = {
+      params: new HttpParams().set('valor', valor).set('pagina', String(pagina))
+    };
+
+    return this.http.get<any>(url, options).pipe(
       tap(
         resultado => {
           return of(resultado);

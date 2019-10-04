@@ -1,33 +1,38 @@
 <h3>Município / Formulário</h3>
 <div class='controles'>
-    <button pButton type="button" label="Pesquisar" routerLink='/municipio/pesquisa' class="ui-button-secondary"></button>
-    <button pButton type="button" label="Novo" (click)='novo()' class="ui-button-secondary"></button>
-    <button pButton type="button" label="Excluir" (click)="excluir()" class="ui-button-danger" *ngIf='editando'></button>
+    <button pButton type="button" label="Pesquisar" routerLink='/municipio/pesquisa'
+        class="ui-button-secondary"></button>
+    <button pButton type="button" label="Novo" (click)="novo()" class="ui-button-secondary"></button>
+    <button pButton type="button" label="Excluir" (click)="excluir()" class="ui-button-danger"
+        *ngIf='editando'></button>
 </div>
 <p-panel header="Identificação">
     <form [formGroup]="formMunicipio">
         <div class="ui-fluid">
-        <div class="p-grid">
-            <div class="p-col-3">
-                Código
-                <input type="text" pInputText formControlName="id">
-            </div>
-            <div class="p-col-9">
-                
-            </div>
-            <div class="p-col-9">
-                Nome 
-                <input type="text" pInputText formControlName="nome">                         
-            </div>
-            <div class="p-col-3">
-                Uf
-                <p-dropdown [options]="ufs" optionLabel="value" dataKey="key" formControlName="uf"></p-dropdown>
-            </div>
+            <div class="p-grid">
+                <div class="p-col-3">
+                    Código
+                    <input type="text" pInputText formControlName="id">
+                </div>
+                <div class="p-col-9">
 
-            <div class="p-col-12">
-                <button pButton type="button" label="Salvar" (click)="salvar()" class="ui-button-success"></button>
+                </div>
+                <div class="p-col-9">
+                    Nome (obrigatório)
+                    <input type="text" pInputText formControlName="nome">
+                </div>
+                <div class="p-col-3">
+                    UF (obrigatório)
+                    <p-dropdown [options]="ufs" optionLabel="value" dataKey="key" formControlName="uf" filter="true">
+                    </p-dropdown>
+                </div>
             </div>
         </div>
-    </div>
     </form>
+    <br>
+    <div class='controles'>
+        <button pButton type="button" label="Salvar" (click)="salvar()" class="ui-button-success"></button>
+        <button pButton type="button" label="Cancelar" (click)="cancelar()" class="ui-button-secondary"></button>
+    </div>
 </p-panel>
+<p-toast [style]="{width: '500px'}"></p-toast>

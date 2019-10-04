@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
 
 const routes: Routes = [
   { path: 'pesquisa',  component: MunicipioPesquisaComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
     DropdownModule,
     ButtonModule,
     PanelModule,
-    TableModule
+    TableModule,
+    ToastModule
   ]
 })
 export class MunicipioModule { }
