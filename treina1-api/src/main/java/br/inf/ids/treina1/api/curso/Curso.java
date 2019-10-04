@@ -40,7 +40,7 @@ public class Curso {
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "materiaid")
-	private Materia mateira;
+	private Materia materia;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "curso")
 	private List<Conteudo> conteudos;
@@ -70,11 +70,11 @@ public class Curso {
 	}
 
 	public Materia getMateira() {
-		return mateira;
+		return materia;
 	}
 
 	public void setMateira(Materia mateira) {
-		this.mateira = mateira;
+		this.materia = mateira;
 	}
 
 	public List<Conteudo> getConteudos() {
