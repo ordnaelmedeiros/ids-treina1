@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { Municipio } from '../modelos/municioio';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
@@ -11,7 +12,7 @@ export class MunicipioCrudService {
 
   carregar(id: number) {
     const url = `${environment.apiURL}/municipio/${id}`;
-    return this.http.get<any>(url).pipe(
+    return this.http.get<Municipio>(url).pipe(
       tap(
         resultado => {
           return of(resultado);
@@ -20,9 +21,9 @@ export class MunicipioCrudService {
     );
   }
 
-  incluir(municipio: any) {
+  incluir(municipio: Municipio) {
     const url = `${environment.apiURL}/municipio`;
-    return this.http.post<any>(url, municipio).pipe(
+    return this.http.post<Municipio>(url, municipio).pipe(
       tap(
         resultado => {
           return of(resultado);
@@ -31,9 +32,9 @@ export class MunicipioCrudService {
     );
   }
 
-  atualizar(municipio: any) {
+  atualizar(municipio: Municipio) {
     const url = `${environment.apiURL}/municipio`;
-    return this.http.put<any>(url, municipio).pipe(
+    return this.http.put<Municipio>(url, municipio).pipe(
       tap(
         resultado => {
           return of(resultado);

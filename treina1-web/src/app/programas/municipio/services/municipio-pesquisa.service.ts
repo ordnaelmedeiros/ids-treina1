@@ -3,15 +3,16 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { Municipio } from '../modelos/municioio';
 
 @Injectable()
 export class MunicipioPesquisaService {
 
   constructor(private http: HttpClient) { }
 
-  listarUFs(): Observable<any[]> {
+  listarUFs(): Observable<Municipio[]> {
     const url = `${environment.apiURL}/municipio/uf/tudo`;
-    return this.http.get<any[]>(url).pipe(
+    return this.http.get<Municipio[]>(url).pipe(
       tap(
         ufs => {
           return of(ufs);
