@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
 import javax.validation.Validator;
 
 import com.ordnaelmedeiros.jpafluidselect.querybuilder.QueryBuilder;
@@ -37,8 +38,8 @@ public class MateriaService {
 	}
 	
 	@Transactional
-	public Long gravar(Materia materia) {
-		this.validar(materia);
+	public Long gravar(@Valid Materia materia) {
+		//this.validar(materia);
 		em.persist(materia);
 		return materia.getId();
 	}
