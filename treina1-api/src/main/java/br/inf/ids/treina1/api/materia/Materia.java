@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -19,10 +21,13 @@ public class Materia {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_MATERIA")
 	private Long id;
 	
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private Situacao situacao;
 	
+	@NotNull
 	@Size(max = 300)
+	@Pattern(regexp = ".*[A-Z]", message = "Só pode maiúsculas")
 	private String nome;
 
 	public Long getId() {
