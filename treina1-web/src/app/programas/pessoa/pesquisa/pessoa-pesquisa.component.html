@@ -34,7 +34,7 @@
             <td>{{pessoa.id}}</td>
             <td>{{pessoa.nome}}</td>
             <td>{{getDescricaoSexo(pessoa.sexo)}}</td>
-            <td>{{pessoa.nascimento | date}}</td>
+            <td>{{pessoa.nascimento | date:'dd/MM/yyyy' }}</td>
             <td>{{pessoa.municipioDeNascimento ? pessoa.municipioDeNascimento.nome : 'Não informado'}}</td>
             <td style='text-align: center;'>
                 <a routerLink='/pessoa/{{ pessoa.id }}'>

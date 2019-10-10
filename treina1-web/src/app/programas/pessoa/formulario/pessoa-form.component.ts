@@ -58,7 +58,7 @@ export class PessoaFormComponent implements OnInit {
 
   configurarCalendar() {
     this.ptBR = {
-      firstDayOfWeek: 1,
+      firstDayOfWeek: 0, // iniciar semana no domingo
       dayNames: [ 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado' ],
       dayNamesShort: [ 'dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb' ],
       dayNamesMin: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
@@ -190,7 +190,7 @@ export class PessoaFormComponent implements OnInit {
       resultadoado => {
         this.municipios = resultadoado.data;
       }
-    )
+    );
   }
 
 }
