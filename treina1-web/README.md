@@ -138,6 +138,16 @@ Aguarde a instalação das dependências...
 <br>Pode demorar um pouco...
 <br>Mas pode demorar bastante...
 
+`Importante:`
+Este projeto já possuí algumas bibliotecas adicionais como dependências:
+
+* PrimeNG - Biblioteca de Componentes Angular (https://www.primefaces.org/primeng/#/setup)
+* Prime Icons - Biblioteca de Ícones (https://www.primefaces.org/primeng/#/icons)
+* Animações - Biblioteca de animações do Angular
+* Angular CDK - Conjunto de ferramentas que o PrimeNG depende
+
+A definição de todas dependências do projeto estão no arquivo: `package.json`
+
 #### Executar
 
 Para executar o projeto em modo desenvolvimento, exeucte o comando:
@@ -147,7 +157,7 @@ ng serve
 
 O resultado deste comando no console, deve exibir algo semelhante a:
 ```
-10% building 3/3 modules 0 activeℹ ｢wds｣: Project is running at http://localhost:4200/webpack-dev-server/
+100% building 3/3 modules 0 activeℹ ｢wds｣: Project is running at http://localhost:4200/webpack-dev-server/
 ℹ ｢wds｣: webpack output is served from /
 ℹ ｢wds｣: 404s will fallback to //index.html
 
