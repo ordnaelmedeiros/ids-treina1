@@ -1,5 +1,11 @@
 # ids-treina1
 
+## Estrutura do projeto:
+- docker/web:	Arquivos de definição da imagem Docker
+- recursos-api:	SQLs de atualização do Banco de Dados
+- treina1-api: API Restful desenvolvida em Java
+- treina1-web: Front-end Web desenvolvido em Angular
+
 ## [Tutorial para instalação Java](https://github.com/ordnaelmedeiros/ids-treina1/blob/master/treina1-api/README.md)
 
 ### Java, principais ferramentas:
