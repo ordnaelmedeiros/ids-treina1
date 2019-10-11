@@ -138,6 +138,10 @@ Aguarde a instalação das dependências...
 <br>Pode demorar um pouco...
 <br>Mas pode demorar bastante...
 
+Em alguns casos podem ocorrer erros dependendo dos privilégios de acesso do usuário do sistema operacional.
+No caso do Windows, se utilizar o PowerShell pode-se evitar alguns desses problemas.
+No caso do Linux, pode ser necessário utilizar o comando `sudo`.
+
 `Importante:`
 Este projeto já possuí algumas bibliotecas adicionais como dependências:
 
