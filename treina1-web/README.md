@@ -108,49 +108,67 @@ Para instalar o Visual Code Studio deve-se baixar o instalador referente ao seu 
 
 ## Sobre este projeto
 
-Baixe os fontes ....
+### Baixar os códigos fontes
 
+> Opção 1 - Download do Github: 
+https://codeload.github.com/ordnaelmedeiros/ids-treina1/zip/master
 
+> Opção 2 - Clonar repositório utilizando o GIT: 
+https://git-scm.com/download
+    
+Após instalado o GIT, pode-se clonar o repositório através do comando:
+```
+git clone https://github.com/ordnaelmedeiros/ids-treina1
+```
 
+Dentro do repositório está tanto o projeto da API (Java) quanto o do front-end (Angular).
 
+### Executar projeto
 
+Após baixar os fontes, é necessário instalar as dependências utilizando o `npm`. 
 
+#### Instalar dependências
 
+Para isso abra uma janela de terminal e navegue até o diretório do projeto Angular (treina1-web) e execute o comando:
+```
+npm install
+```
 
+Aguarde a instalação das dependências...
+<br>Pode demorar um pouco...
+<br>Mas pode demorar bastante...
 
+#### Executar
 
+Para executar o projeto em modo desenvolvimento, exeucte o comando:
+```
+ng serve
+```
 
+O resultado deste comando no console, deve exibir algo semelhante a:
+```
+10% building 3/3 modules 0 activeℹ ｢wds｣: Project is running at http://localhost:4200/webpack-dev-server/
+ℹ ｢wds｣: webpack output is served from /
+ℹ ｢wds｣: 404s will fallback to //index.html
 
+chunk {main} main.js, main.js.map (main) 49.5 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 264 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 9.73 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 4.08 MB [initial] [rendered]
+Date: 2019-10-11T03:32:25.335Z - Hash: 61dce5284f412f1491b0 - Time: 7181ms
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+ℹ ｢wdm｣: Compiled successfully.
+```
 
+Para acessar a aplicação, abra o navegador com a URL:
+```
+http://localhost:4200/
+```
 
+## Dúvidas?
 
+Primeiramente, tente pesquisar no Google...
+<br>É importante aprender a encontrar as respostas...
 
-
-<br><br><br><br>
-<hr>
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Se o problema persistir, entre em contato: eduardo.bastian@gmail.com
