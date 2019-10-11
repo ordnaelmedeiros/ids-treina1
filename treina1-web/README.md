@@ -6,7 +6,7 @@ As principais ferramentas utilizadas serão:
 * NodeJS
 * npm
 * angular-cli
-* Visual Code Studio
+* Visual Studio Code
 
 ### NodeJS
 
@@ -33,7 +33,7 @@ Após instalar, para verificar a versão do node utiliza-se o comando:
 node -v
 ```
 
-Resultado esperado deve ser semelhante a:
+Resultado deve ser semelhante a:
 ```
 v10.16.3
 ```
@@ -51,14 +51,14 @@ Para verificar a versão do npm utiliza-se o comando:
 npm -v
 ```
 
-Resultado esperado deve ser semelhante a:
+Resultado deve ser semelhante a:
 ```
 6.9.0
 ```
 
 ### Angular-CLI
 
-A CLI Angular é uma ferramenta de interface da linha de comandos que você usa para inicializar, desenvolver e manter aplicativos Angular. Você pode usar a ferramenta diretamente em uma interface de comando ou indiretamente por meio de uma interface do usuário interativa, como o Visual Code Studio.
+A CLI Angular é uma ferramenta de interface da linha de comandos que você usa para inicializar, desenvolver e manter aplicativos Angular. Você pode usar a ferramenta diretamente em uma interface de comando ou indiretamente por meio de uma interface do usuário interativa, como o Visual Studio Code.
 
 Sites: 
 * https://angular.io/cli
@@ -96,15 +96,15 @@ Package                      Version
 rxjs                         6.4.0
 ```
 
-### Visual Code Studio
+### Visual Studio Code
 
-O Visual Code Studio é a IDE utilizada para desenvolvimento.
+O Visual Studio Code é a IDE utilizada para desenvolvimento.
 
 Site: https://code.visualstudio.com/
 
 #### Instalação
 
-Para instalar o Visual Code Studio deve-se baixar o instalador referente ao seu sistema operacional diratamente pelo site do produto.
+Para instalar o Visual Studio Code deve-se baixar o instalador referente ao seu sistema operacional diratamente pelo site do produto.
 
 ## Sobre este projeto
 
@@ -150,7 +150,7 @@ A definição de todas dependências do projeto estão no arquivo: `package.json
 
 #### Executar
 
-Para executar o projeto em modo desenvolvimento, exeucte o comando:
+Para executar o projeto em modo desenvolvimento, execute o comando:
 ```
 ng serve
 ```
