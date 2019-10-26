@@ -6,14 +6,14 @@
 - `treina1-api`: API Restful desenvolvida em Java
 - `treina1-web`: Front-end Web desenvolvido em Angular
 
-## [Tutorial para instalação Java](https://github.com/ordnaelmedeiros/ids-treina1/blob/master/treina1-api/README.md)
+## [Tutorial para instalação Java](https://github.com/ordnaelmedeiros/ids-treina1/blob/api-pessoa/treina1-api/README.md)
 
 ### Java, principais ferramentas:
 - Quarkus (Servidor de aplicação) https://quarkus.io/
 - RestEasy (API RestFul) https://docs.jboss.org/resteasy/docs/4.2.0.Final/userguide/html_single/
 - Hibernate (ORM) https://www.devmedia.com.br/guia/hibernate/38312
 
-## [Tutorial para instalação Angular](https://github.com/ordnaelmedeiros/ids-treina1/blob/master/treina1-web/README.md)
+## [Tutorial para instalação Angular](https://github.com/ordnaelmedeiros/ids-treina1/blob/api-pessoa/treina1-web/README.md)
 
 Acesse o tutorial para obter mais detalhes sobre as ferramentas.
 

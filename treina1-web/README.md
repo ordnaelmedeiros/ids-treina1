@@ -111,7 +111,7 @@ Para instalar o Visual Studio Code deve-se baixar o instalador referente ao seu 
 ### Baixar os códigos fontes
 
 > Opção 1 - Download do Github: 
-https://codeload.github.com/ordnaelmedeiros/ids-treina1/zip/master
+https://codeload.github.com/ordnaelmedeiros/ids-treina1/zip/api-pessoa
 
 > Opção 2 - Clonar repositório utilizando o GIT: 
 https://git-scm.com/download
