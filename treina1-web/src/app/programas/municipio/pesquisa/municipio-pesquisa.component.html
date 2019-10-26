@@ -17,7 +17,7 @@
         </div>
     </div>
 </div>
-<p-table [value]="municipios" autoLayout="true" [paginator]="true" [rows]="50">
+<p-table [value]="municipios" autoLayout="true" [paginator]="true" [rows]="50" [loading]="pesquisando">
     <ng-template pTemplate="header">
         <tr>
             <th>Código</th>
@@ -41,7 +41,7 @@
     <ng-template pTemplate="emptymessage">
         <tr>
             <td colspan="4">
-                <div style="padding: 50px">
+                <div style="padding: 20px">
                     Nenhum registro listado
                 </div>
             </td>

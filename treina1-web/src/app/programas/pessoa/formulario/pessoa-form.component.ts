@@ -14,8 +14,7 @@ import { MunicipioPesquisaService } from '../../municipio/services/municipio-pes
   providers: [
     PessoaCrudService,
     PessoaPesquisaService,
-    MunicipioPesquisaService,
-    MessageService
+    MunicipioPesquisaService
   ]
 })
 export class PessoaFormComponent implements OnInit {

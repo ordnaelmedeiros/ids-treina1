@@ -13,8 +13,8 @@ import { PessoaPesquisaService } from '../services/pessoa-pesquisa.service';
 export class PessoaPesquisaComponent implements OnInit {
 
   pessoas: any;
-
   formPesquisa: FormGroup;
+  pesquisando = false;
 
   constructor(private pessoaPesquisaService: PessoaPesquisaService, private formBuilder: FormBuilder) {
     this.formPesquisa = this.formBuilder.group({
@@ -27,10 +27,12 @@ export class PessoaPesquisaComponent implements OnInit {
   }
 
   pesquisar() {
+    this.pesquisando = true;
     const valorPesquisa = this.formPesquisa.get('valorPesquisa').value;
     this.pessoaPesquisaService.pesquisar(valorPesquisa).subscribe(
       resultado => {
         this.pessoas = resultado.data;
+        this.pesquisando = false;
       }
     );
   }

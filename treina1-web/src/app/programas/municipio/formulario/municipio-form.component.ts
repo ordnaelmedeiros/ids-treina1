@@ -12,8 +12,7 @@ import { Municipio } from '../modelos/municipio';
   styleUrls: ['./municipio-form.component.css'],
   providers: [
     MunicipioCrudService,
-    MunicipioPesquisaService,
-    MessageService
+    MunicipioPesquisaService
   ]
 })
 export class MunicipioFormComponent implements OnInit {
@@ -106,7 +105,7 @@ export class MunicipioFormComponent implements OnInit {
         this.messageService.add({
           severity: 'success',
           summary: 'Sucesso!',
-          detail: 'Município ' + municipio.nome + ' alterado com sucesso!'
+          detail: `Município ${municipio.nome} alterado com sucesso!`
         });
       }
     );
@@ -118,8 +117,9 @@ export class MunicipioFormComponent implements OnInit {
         this.messageService.add({
           severity: 'success',
           summary: 'Sucesso!',
-          detail: 'Município ' + municipio.nome + ' incluído com sucesso!'
+          detail: `Município ${municipio.nome} incluído com sucesso!`
         });
+        this.router.navigate([`/municipio/${municipioId}`]);
       }
     );
   }
@@ -139,7 +139,7 @@ export class MunicipioFormComponent implements OnInit {
           this.messageService.add({
             severity: 'success',
             summary: 'Sucesso!',
-            detail: 'Município ' + id + ' excluído com sucesso!'
+            detail: `Município ${id} excluído com sucesso!`
           });
           this.novo();
         }

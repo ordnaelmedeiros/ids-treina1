@@ -13,7 +13,7 @@ export class SideMenuComponent implements OnInit {
   }
 
   ajuda() {
-    alert('Te vira magrão!');
+    alert('A melhor ajuda...');
   }
 
 }

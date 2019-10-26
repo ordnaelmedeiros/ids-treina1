@@ -16,8 +16,8 @@ export class TelefoneComponent implements OnInit {
 
   tiposTelefone = [
     { label: 'Celular', value: 'CELULAR'},
-    { label: 'Comercial', value: 'FIXO'},
-    { label: 'Fax', value: 'FAX'}
+    { label: 'Fixo', value: 'FIXO'},
+    { label: 'Trabalho', value: 'TRABALHO'}
   ];
 
   formTelefone: FormGroup;

@@ -13,8 +13,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class MunicipioPesquisaComponent implements OnInit {
 
   municipios: any;
-
   formPesquisa: FormGroup;
+  pesquisando = false;
 
   constructor(private municipioPesquisaService: MunicipioPesquisaService, private formBuilder: FormBuilder) {
     this.formPesquisa = this.formBuilder.group({
@@ -27,10 +27,12 @@ export class MunicipioPesquisaComponent implements OnInit {
   }
 
   pesquisar() {
+    this.pesquisando = true;
     const valorPesquisa = this.formPesquisa.get('valorPesquisa').value;
     this.municipioPesquisaService.pesquisar(valorPesquisa).subscribe(
       resultado => {
         this.municipios = resultado.data;
+        this.pesquisando = false;
       }
     );
   }
